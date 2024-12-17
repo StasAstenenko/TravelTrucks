@@ -1,0 +1,16 @@
+.navLink {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #101828;
+  transition: color 250ms linear;
+}
+
+.navLink:hover {
+  color: #d84343;
+}
+
+.active {
+  color: #d84343;
+}

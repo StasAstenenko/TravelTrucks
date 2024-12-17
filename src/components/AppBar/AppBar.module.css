@@ -1,0 +1,26 @@
+.title {
+  color: #101828;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.secondWord {
+  color: #475467;
+}
+
+.header {
+  padding: 24px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 450px;
+  border-bottom: 1px solid #f2f4f7;
+  background-color: #f7f7f7;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}

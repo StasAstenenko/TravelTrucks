@@ -1,0 +1,20 @@
+.homeSection {
+  background: rgba(0, 0, 0, 0.2);
+  background-image: url('../../img/Picture-1x.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media only screen and (min-resolution: 192dpi) {
+  .homeSection {
+    background-image: url('../../img/Picture-2x.jpg');
+  }
+}
+
+.container {
+  max-width: 571px;
+  margin-top: 212px;
+  margin-bottom: 212px;
+  color: #f7f7f7;
+}
