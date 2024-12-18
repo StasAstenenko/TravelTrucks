@@ -44,6 +44,7 @@
   flex-direction: column;
   gap: 24px;
   max-width: 360px;
+  margin-bottom: 32px;
 }
 
 .equipment {
@@ -52,4 +53,40 @@
   line-height: 120%;
   padding-bottom: 24px;
   border-bottom: 2px solid #dadde1;
+}
+
+.eqFilterContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.checkBoxLabel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #101828;
+  border-radius: 12px;
+  min-width: 112px;
+  min-height: 96px;
+  cursor: pointer;
+}
+
+.checkBox {
+  position: absolute;
+  appearance: none;
+  opacity: 0;
+}
+
+.typeFilterContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
 }
