@@ -1,20 +1,13 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense } from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
 import Loader from './components/Loader/Loader';
-import { getAllTransport } from './redux/allTransport/operations';
-import { useDispatch } from 'react-redux';
-// import DetailsPage from './pages/DetailsPage/DetailsPage';
+import DetailsPage from './pages/DetailsPage/DetailsPage';
 
 function App() {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllTransport());
-  }, [dispatch]);
-
   return (
     <>
       <Layout>
@@ -22,7 +15,7 @@ function App() {
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/catalog' element={<CatalogPage />} />
-            {/* <Route path='/details' element={<DetailsPage />} /> */}
+            <Route path='/details' element={<DetailsPage />} />
           </Routes>
         </Suspense>
       </Layout>

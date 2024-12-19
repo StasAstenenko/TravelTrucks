@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  position: relative;
   max-width: 360px;
   gap: 8px;
   margin-bottom: 40px;
@@ -20,13 +21,13 @@
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 48px;
-  position: relative;
 }
 
 .locIcon {
   position: absolute;
-  top: 14.3%;
-  left: 6%;
+  left: 20px;
+  top: 50%;
+  transform: translateY(30%);
   fill: #6c717b;
   stroke: #6c717b;
   width: 20px;

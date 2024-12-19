@@ -36,6 +36,7 @@ const Filter = () => {
             <label htmlFor='location' className={css.loc}>
               Location
             </label>
+            <BsMap className={css.locIcon} />
             <Field
               type='text'
               id='location'
@@ -43,7 +44,6 @@ const Filter = () => {
               placeholder='City'
               className={css.locForm}
             />
-            <BsMap className={css.locIcon} />
           </Container>
           <h2 className={css.filterDesc}>Filter</h2>
           <Container className={css.eqContainer}>

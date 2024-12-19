@@ -3,6 +3,7 @@ import { getAllTransport } from './operations';
 
 const initialState = {
   items: [],
+  total: 0,
   isLoading: false,
   error: null,
 };
@@ -13,13 +14,25 @@ const allTransportSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllTransport.pending, (state, action) => {
+      .addCase(getAllTransport.pending, (state) => {
         state.isLoading = true;
-        state.error = action.payload;
+        state.error = null;
       })
       .addCase(getAllTransport.fulfilled, (state, action) => {
-        state.items = action.payload;
-        console.log(state.items);
+        const newItems = action.payload.items;
+        // Проверяем, чтобы новые элементы не дублировались
+        const existingIds = new Set(state.items.map((item) => item.id));
+        const filteredItems = newItems.filter(
+          (item) => !existingIds.has(item.id)
+        );
+        state.items = [...state.items, ...filteredItems];
+        state.total = action.payload.total;
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(getAllTransport.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
       });
   },
 });

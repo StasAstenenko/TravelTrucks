@@ -3,12 +3,12 @@ import { instance } from '../api/api';
 
 export const getAllTransport = createAsyncThunk(
   '/campers',
-  async (_, thunkApi) => {
+  async (page, thunkApi) => {
     try {
-      const { data } = await instance.get('/campers');
-      const { items } = data;
-      console.log(items);
-      return items;
+      const params = { page, limit: 4 };
+      const { data } = await instance.get('/campers', { params });
+      console.log(data);
+      return data;
     } catch (error) {
       thunkApi.rejectWithValue(error.message);
     }
