@@ -1,6 +1,17 @@
 import { Field, Form, Formik } from 'formik';
 import Container from '../Container/Container';
 import css from './Filter.module.css';
+import { AiOutlineAppstore } from 'react-icons/ai';
+import {
+  BsCupHot,
+  BsDiagram3,
+  BsDisplay,
+  BsGrid1X2,
+  BsGrid3X3Gap,
+  BsMap,
+  BsWind,
+} from 'react-icons/bs';
+import { PiShower } from 'react-icons/pi';
 
 const Filter = () => {
   const initialValue = {
@@ -32,6 +43,7 @@ const Filter = () => {
               placeholder='City'
               className={css.locForm}
             />
+            <BsMap className={css.locIcon} />
           </Container>
           <h2 className={css.filterDesc}>Filter</h2>
           <Container className={css.eqContainer}>
@@ -50,6 +62,7 @@ const Filter = () => {
                   name='AC'
                   className={css.checkBox}
                 />
+                <BsWind className={css.icon} />
                 AC
               </label>
 
@@ -69,6 +82,7 @@ const Filter = () => {
                   value='automatic'
                   className={css.checkBox}
                 />
+                <BsDiagram3 className={css.icon} />
                 Automatic
               </label>
 
@@ -87,6 +101,7 @@ const Filter = () => {
                   name='kitchen'
                   className={css.checkBox}
                 />
+                <BsCupHot className={css.icon} />
                 Kitchen
               </label>
 
@@ -103,6 +118,7 @@ const Filter = () => {
                   name='TV'
                   className={css.checkBox}
                 />
+                <BsDisplay className={css.icon} />
                 TV
               </label>
 
@@ -121,6 +137,7 @@ const Filter = () => {
                   name='bathroom'
                   className={css.checkBox}
                 />
+                <PiShower className={css.icon} />
                 Bathroom
               </label>
             </Container>
@@ -145,6 +162,7 @@ const Filter = () => {
                   value='van'
                   className={css.checkBox}
                 />
+                <BsGrid1X2 className={css.icon} />
                 Van
               </label>
               <label
@@ -163,7 +181,8 @@ const Filter = () => {
                   value='fullyIntegrated'
                   className={css.checkBox}
                 />
-                Fully Integrated
+                <AiOutlineAppstore className={css.icon} />
+                Fully <span>Integrated</span>
               </label>
               <label
                 className={css.checkBoxLabel}
@@ -181,11 +200,14 @@ const Filter = () => {
                   value='alcove'
                   className={css.checkBox}
                 />
-                alcove
+                <BsGrid3X3Gap className={css.icon} />
+                Alcove
               </label>
             </Container>
           </Container>
-          <button type='submit'>submit</button>
+          <button type='submit' className={css.searchBtn}>
+            Search
+          </button>
         </Form>
       )}
     </Formik>

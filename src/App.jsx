@@ -1,13 +1,20 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import CatalogPage from './pages/CatalogPage/CatalogPage';
 import Loader from './components/Loader/Loader';
+import { getAllTransport } from './redux/allTransport/operations';
+import { useDispatch } from 'react-redux';
 // import DetailsPage from './pages/DetailsPage/DetailsPage';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAllTransport());
+  }, [dispatch]);
+
   return (
     <>
       <Layout>

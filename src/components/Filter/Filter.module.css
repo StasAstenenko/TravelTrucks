@@ -20,6 +20,18 @@
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 48px;
+  position: relative;
+}
+
+.locIcon {
+  position: absolute;
+  top: 14.3%;
+  left: 6%;
+  fill: #6c717b;
+  stroke: #6c717b;
+  width: 20px;
+  height: 20px;
+  transition: all 250ms linear;
 }
 
 .locForm::placeholder {
@@ -29,6 +41,11 @@
 .locForm:focus {
   outline: none;
   color: #101828;
+}
+
+.locForm:focus + .locIcon {
+  fill: #101828;
+  stroke: #101828;
 }
 
 .filterDesc {
@@ -64,9 +81,11 @@
 
 .checkBoxLabel {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   position: relative;
   font-weight: 500;
   font-size: 16px;
@@ -89,4 +108,29 @@
   display: flex;
   flex-direction: row;
   gap: 12px;
+}
+
+.searchBtn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  padding: 16px 57px;
+  border-radius: 200px;
+  background-color: #e44848;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.searchBtn:hover {
+  background-color: #d84343;
+}
+
+.icon {
+  fill: #101828;
+  stroke: #101828;
+  width: 32px;
+  height: 32px;
 }
