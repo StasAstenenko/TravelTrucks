@@ -43,7 +43,7 @@ const TransportDetail = () => {
       </Container>
       <p className={css.camperPrice}>&#8364;{Number(price).toFixed(2)}</p>
       <ul className={css.listImg}>
-        {images.map((image) => {
+        {images?.map((image) => {
           return (
             <li key={image.id} className={css.listItem}>
               <img src={image.original} alt='camper' className={css.img} />

@@ -9,7 +9,7 @@ const Reviews = () => {
   return (
     <>
       <ul className={css.commentList}>
-        {reviews.map((review) => {
+        {reviews?.map((review) => {
           const filledStars = review.reviewer_rating; // Рейтинг из данных
           const emptyStars = 5 - filledStars; // Пустые звезды для заполнения
           return (

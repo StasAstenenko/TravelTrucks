@@ -51,6 +51,7 @@ const Features = () => {
   const height = useSelector(selectHeight);
   const tank = useSelector(selectTank);
   const consumption = useSelector(selectConsumption);
+  const stringForm = String(form);
   return (
     <Container className={css.typeContainer}>
       <Container className={css.categoriesContainer}>
@@ -126,7 +127,7 @@ const Features = () => {
         <Container className={css.mainInfoContainer}>
           <Container className={css.infoContainer}>
             <p>Form</p>
-            <p>{form[0].toUpperCase() + form.slice(1)}</p>
+            <p>{stringForm[0].toUpperCase() + stringForm.slice(1)}</p>
           </Container>
           <Container className={css.infoContainer}>
             <p>Length</p>
