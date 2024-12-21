@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getTsById } from '../../redux/details/operations';
 import Section from '../../components/Section/Section';
 import css from './DetailsPage.module.css';
 import TransportDetail from '../../components/TransportDetail/TransportDetail';
-import { selectIsLoading } from '../../redux/details/selectors';
-import Loader from '../../components/Loader/Loader';
+// import { selectIsLoading } from '../../redux/details/selectors';
+// import Loader from '../../components/Loader/Loader';
 
 const DetailsPage = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const isLoading = useSelector(selectIsLoading);
+  // const isLoading = useSelector(selectIsLoading);
 
   useEffect(() => {
     dispatch(getTsById(id));
@@ -19,7 +19,7 @@ const DetailsPage = () => {
 
   return (
     <Section className={css.section}>
-      {isLoading ? <Loader /> : <TransportDetail />}
+      <TransportDetail />
     </Section>
   );
 };
