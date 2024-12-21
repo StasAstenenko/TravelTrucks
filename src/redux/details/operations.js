@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../api/api';
 
 export const getTsById = createAsyncThunk(
-  '/campers/:id',
+  'camper/idCamper',
   async (id, thunkApi) => {
     try {
       const { data } = await instance.get(`/campers/${id}`);
