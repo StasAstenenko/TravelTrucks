@@ -9,18 +9,27 @@ import { useEffect, useState } from 'react';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import {
   selectAllTransport,
+  selectIsLoading,
   selectTotal,
 } from '../../redux/allTransport/selectors';
+import Loader from '../../components/Loader/Loader';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const items = useSelector(selectAllTransport);
   const total = useSelector(selectTotal);
   const [page, setPage] = useState(1);
+  const isLoading = useSelector(selectIsLoading);
+  const [filters, setFilters] = useState({});
 
   useEffect(() => {
-    dispatch(getAllTransport(page));
-  }, [dispatch, page]);
+    dispatch(getAllTransport({ page, filters }));
+  }, [dispatch, page, filters]);
+
+  const handleFilterChange = (newFilters) => {
+    setFilters(newFilters); // Обновляем фильтры
+    setPage(1); // Сбрасываем страницу на первую
+  };
 
   function loadMore() {
     if (items.length < total) {
@@ -30,11 +39,17 @@ const CatalogPage = () => {
 
   return (
     <Section className={css.section}>
-      <Filter />
-      <Container className={css.container}>
-        <TransportsList />
-        <LoadMoreBtn loadMore={loadMore} className={css.loadMoreBtn} />
-      </Container>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <Filter onFilterChange={handleFilterChange} />
+          <Container className={css.container}>
+            <TransportsList filters={filters} />
+            <LoadMoreBtn loadMore={loadMore} className={css.loadMoreBtn} />
+          </Container>
+        </>
+      )}
     </Section>
   );
 };

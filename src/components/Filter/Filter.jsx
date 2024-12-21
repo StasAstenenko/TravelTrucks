@@ -13,7 +13,7 @@ import {
 } from 'react-icons/bs';
 import { PiShower } from 'react-icons/pi';
 
-const Filter = () => {
+const Filter = ({ onFilterChange }) => {
   const initialValue = {
     location: '',
     AC: false,
@@ -24,8 +24,16 @@ const Filter = () => {
     form: '',
   };
 
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = (values, actions) => {
+    // Фильтруем значения, оставляя только заполненные или выбранные
+    const filteredValues = Object.fromEntries(
+      Object.entries(values).filter(([, value]) => {
+        if (typeof value === 'boolean') return value; // Возвращаем только true для чекбоксов
+        return value !== ''; // Убираем пустые строки
+      })
+    );
+    onFilterChange(filteredValues);
+    actions.resetForm();
   };
 
   return (

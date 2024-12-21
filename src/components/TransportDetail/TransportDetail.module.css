@@ -116,3 +116,8 @@
 .typeContainer {
   max-width: 631px;
 }
+
+.regContainer {
+  display: flex;
+  gap: 40px;
+}

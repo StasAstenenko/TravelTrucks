@@ -24,3 +24,4 @@ export const selectTransmission = (state) =>
   state.details.transport.transmission;
 export const selectWater = (state) => state.details.transport.water;
 export const selectWidth = (state) => state.details.transport.width;
+export const selectIsLoading = (state) => state.details.isLoading;

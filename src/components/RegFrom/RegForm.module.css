@@ -1,0 +1,92 @@
+.container {
+  max-width: 641px;
+  padding: 44px 57px;
+  border-radius: 10px;
+  border: 1px solid #dadde1;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #6c717b;
+  margin-bottom: 24px;
+}
+
+.input {
+  border: none;
+  padding: 18px;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  min-width: 527px;
+  color: #101828;
+}
+
+.input::placeholder {
+  color: #6c717b;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.comment {
+  min-height: 118px;
+}
+
+.react-datepicker-popper {
+  z-index: 999; /* Убедитесь, что календарь перекрывает другие элементы */
+}
+
+.inputWrapper {
+  position: relative; /* Чтобы правильно позиционировать календарь */
+}
+
+.react-datepicker__header {
+  background-color: #fff;
+}
+
+.submitButton {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  padding: 16px 57px;
+  border-radius: 200px;
+  background-color: #e44848;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms linear;
+}
+
+.submitButton:hover,
+.submitButton:focus {
+  outline: none;
+  background-color: #d84343;
+}

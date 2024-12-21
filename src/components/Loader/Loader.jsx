@@ -9,8 +9,7 @@ const Loader = ({ height = '100vh' }) => {
       ariaLabel='hourglass-loading'
       wrapperStyle={{
         height: height,
-        justifyContent: 'center',
-        alignItems: 'center',
+        margin: '0 auto',
       }}
       wrapperClass=''
       colors={['#d84343', '#e44848']}

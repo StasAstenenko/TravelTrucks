@@ -15,6 +15,7 @@ import { BsMap } from 'react-icons/bs';
 import { NavLink, Outlet } from 'react-router-dom';
 import clsx from 'clsx';
 import { Suspense } from 'react';
+import RegForm from '../RegFrom/RegFrom';
 
 const isActive = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -59,12 +60,13 @@ const TransportDetail = () => {
           Reviews
         </NavLink>
       </Container>
-      <Container>
+      <Container className={css.regContainer}>
         <Container className={css.typeContainer}>
           <Suspense>
             <Outlet />
           </Suspense>
         </Container>
+        <RegForm />
       </Container>
     </Container>
   );
