@@ -41,7 +41,7 @@ const TransportDetail = () => {
           <BsMap className={css.locIcon} /> {location}
         </p>
       </Container>
-      <p className={css.camperPrice}>&#8364;{price.toFixed(2)}</p>
+      <p className={css.camperPrice}>&#8364;{Number(price).toFixed(2)}</p>
       <ul className={css.listImg}>
         {images.map((image) => {
           return (
