@@ -35,7 +35,7 @@ const TransportDetail = () => {
       <Container className={css.ratingContainer}>
         <p className={css.rating}>
           <FaStar className={css.iconStar} />
-          {`${rating}(${countReviews.length} Reviews)`}
+          {`${rating}(${countReviews?.length} Reviews)`}
         </p>
         <p className={css.locDesc}>
           <BsMap className={css.locIcon} /> {location}
