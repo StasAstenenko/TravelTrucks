@@ -84,7 +84,7 @@ const RegForm = () => {
             </Container>
 
             <button type='submit' className={css.submitButton}>
-              Submit
+              Send
             </button>
           </Form>
         )}
