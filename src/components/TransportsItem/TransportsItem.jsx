@@ -4,22 +4,21 @@ import css from './TransportsItem.module.css';
 import { BsMap } from 'react-icons/bs';
 import { FaStar } from 'react-icons/fa';
 import { IoMdHeartEmpty } from 'react-icons/io';
+import { BsCupHot, BsDiagram3, BsFuelPump, BsWind } from 'react-icons/bs';
 
 const TransportsItem = ({
+  id,
   name,
   rating,
   price,
   description,
   countReviews,
   location,
-  //   kitchen,
-  //   microwave,
-  //   gas,
-  //   AC,
-  //   TV,
-  //   bathroom,
-  //   engine,
+  kitchen,
+  AC,
   gallery,
+  transmission,
+  engine,
 }) => {
   return (
     <li>
@@ -48,7 +47,32 @@ const TransportsItem = ({
             </p>
           </Container>
           <p className={css.desc}>{description}</p>
-          <NavLink to='/description' className={css.descBtn}>
+          <Container className={css.categoriesContainer}>
+            {transmission === 'automatic' && (
+              <div className={css.iconContainer}>
+                <BsDiagram3 className={css.icon} />
+                Automatic
+              </div>
+            )}
+            {AC && (
+              <div className={css.iconContainer}>
+                <BsWind className={css.icon} />
+                AC
+              </div>
+            )}
+            <div className={css.iconContainer}>
+              <BsFuelPump className={css.icon} />
+              {engine === 'patrol' ? 'Patrol' : 'Diesel'}
+            </div>
+            {kitchen && (
+              <div className={css.iconContainer}>
+                <BsCupHot className={css.icon} />
+                Kitchen
+              </div>
+            )}
+          </Container>
+
+          <NavLink to={`/catalog/${id}`} className={css.descBtn}>
             Show More
           </NavLink>
         </Container>

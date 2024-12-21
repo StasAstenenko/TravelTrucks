@@ -12,11 +12,17 @@ const TransportsList = () => {
         return (
           <TransportsItem
             key={item.id}
+            id={item.id}
             countReviews={item.reviews?.length}
             description={item.description}
             gallery={item.gallery}
             location={item.location}
+            kitchen={item.kitchen}
+            AC={item.AC}
             name={item.name}
+            engine={item.engine}
+            refrigerator={item.refrigerator}
+            transmission={item.transmission}
             price={item.price.toFixed(2)}
             rating={item.rating}
           />

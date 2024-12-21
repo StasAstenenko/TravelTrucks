@@ -3,7 +3,7 @@ import { persistStore } from 'redux-persist';
 import { allTransportReducer } from './allTransport/slice';
 import storage from 'redux-persist/lib/storage';
 import persistReducer from 'redux-persist/es/persistReducer';
-// import { detailsReducer } from './details/slice';
+import { detailsReducer } from './details/slice';
 
 const persistConfig = {
   key: 'allTransport',
@@ -11,10 +11,16 @@ const persistConfig = {
   whitelist: ['allTransport'],
 };
 
+const transportConfig = {
+  key: 'transport',
+  storage,
+  whitelist: ['transport'],
+};
+
 export const store = configureStore({
   reducer: {
     allTransport: persistReducer(persistConfig, allTransportReducer),
-    // details: detailsReducer,
+    details: persistReducer(transportConfig, detailsReducer),
   },
 });
 

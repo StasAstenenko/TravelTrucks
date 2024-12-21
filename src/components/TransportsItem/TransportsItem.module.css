@@ -106,3 +106,33 @@
   justify-content: center;
   align-items: center;
 }
+
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke: #101828;
+}
+
+.categoriesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: calc((100% - 24px) / 1.4);
+  margin-bottom: 24px;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #101828;
+  background-color: #f2f4f7;
+  border-radius: 100px;
+}
